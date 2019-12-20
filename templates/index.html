@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css.css">
+</head>
+<body bgcolor="#7fffd4">
+   <a href="">增加</a>
+   <table style="background-color: antiquewhite; width: 600px; " border="1px" cellspacing="0px" >
+       <tr>
+           <th>序号</th>
+           <th>商品</th>
+           <th>数量</th>
+           <th>价格</th>
+           <th>操作</th>
+       </tr>
+       {%for row in listfruit %}
+            <tr>
+                <td>{{row.name}}</td>
+                <td>{{row.price}}</td>
+                <td>{{row.count}}</td>
+                <td>
+                    <a href="/delete/?name={{row.name}}">删除</a>
+                    <a href="/update/?name={{row.name}}">更新</a>
+                </td>
+            </tr>
+       {%endfor%}
+   </table>
+</body>
+</html>
